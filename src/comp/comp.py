@@ -7,6 +7,7 @@ class Human:
 
     def __repr__(self):
         return f"<Human: {self.name}, {self.age}>"
+        
 
 humans = [
     Human("Alice", 29),
@@ -24,30 +25,31 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = []
+a = [a.name for a in humans if a.name.startswith("D")]
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = []
+b = [b.name for b in humans if b.name.endswith("e")]
 print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = []
+letters = ['C', 'D', 'E', 'F', 'G']
+c = [c.name for c in humans if c.name[0] in letters]
 print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
-d = []
+d = [d.age + 10 for d in humans]
 print(d)
 
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
-e = []
+e = [(e.name + "-" + str(e.age)) for e in humans]
 print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and

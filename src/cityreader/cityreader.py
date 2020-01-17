@@ -11,12 +11,16 @@ class City:
   #returns a string that tries to recreate the object
   #{}s are placeholders for name, lat, lon
   def __repr__(self):
+    #this f string returns the same result
+    #return f"City('{self.name}', '{self.lat}', '{self.lon}')"
     return "City('{}', '{}', '{}')".format(self.name, self.lat, self.lon)
   
   #returns a string display for the end user
   #{}s are placeholders for name, lat, lon
   def __str__(self):
     return "{}, {}, {}".format(self.name, self.lat, self.lon)
+
+    
 
 
 # We have a collection of US cities with population over 750,000 stored in the
